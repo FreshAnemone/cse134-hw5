@@ -1,0 +1,747 @@
+:root {
+    color-scheme: light;
+    --text-color: rgb(0, 0, 0);
+    --page-bg-color: rgb(175, 255, 220);
+    --bar-bg-color: rgb(101, 172, 143);      /* header, footer */
+    --bar-bd-color: rgb(71, 143, 113);
+    --nav-item-bg-color: rgb(140, 254, 234);
+    --nav-bd-color: cadetblue;
+    --focus-color: rgb(243, 255, 76);
+    --font-main: Arial, Helvetica, sans-serif;
+    --bar-pad-vert: 0.5rem;
+    --bar-pad-horiz: 1rem;
+    --bar-pad: 0.5rem;
+    --line-height-body: 1.6;
+    --line-height-footer: 1.4;
+
+    --link-color: rgb(0, 70, 140);
+    --hover-bg-color: rgb(178, 255, 210);
+    --glow-color: rgb(0, 255, 132);
+    --control-bg-color: white;
+    --control-text-color: black;
+    --control-bd-color: rgb(40, 70, 60);
+    --focus-text-color: black;               
+    --valid-color: rgb(30, 130, 20);
+    --error-color: rgb(255, 0, 0);           
+    --warning-color: rgb(140, 70, 0);  
+
+    --status-loading: rgb(255, 235, 59); 
+    --status-loaded: rgb(43, 255, 43);
+
+    --history-btn-txt-clr: blue;
+
+    --glow-shadow: 0 0 0.8rem 0.4rem var(--glow-color);
+
+
+    
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --text-color: rgb(230, 245, 238);
+    --page-bg-color: rgb(18, 32, 27);
+    --bar-bg-color: rgb(30, 60, 48);
+    --bar-bd-color: rgb(80, 140, 115);
+    --nav-item-bg-color: rgb(40, 85, 70);
+    --nav-bd-color: rgb(110, 180, 180);
+    --link-color: rgb(140, 210, 255);
+
+    /* fix this */  
+    --hover-bg-color: rgb(20, 68, 50);
+        /* background-color: var(--bar-bg-color); */
+
+    --glow-color: rgb(0, 200, 110);
+    --control-bg-color: rgb(25, 45, 38);
+    --control-text-color: rgb(230, 245, 238);
+    --control-bd-color: rgb(110, 180, 150);
+    --valid-color: rgb(100, 220, 90);
+    --error-color: rgb(255, 130, 130);
+
+    --warning-color: rgb(255, 200, 100);
+
+    --status-loading: rgb(206, 185, 2); 
+    --status-loaded: rgb(0, 189, 0);
+
+    --history-btn-txt-clr: rgb(0, 166, 196);
+    --glow-shadow: 0 0 0.3rem 0.1rem var(--glow-color);
+
+   
+}
+
+body{
+    background-color: var(--page-bg-color);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: var(--line-height-body);
+    margin: 0 0 0 0;
+    min-height: 101vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+header{
+    /* text-align: center; */
+    padding: var(--bar-pad-vert) var(--bar-pad-horiz) var(--bar-pad-vert) var(--bar-pad-horiz);
+    
+    border-bottom: solid;
+    border-bottom-color: var(--bar-bd-color); 
+    border-bottom-width: 1px;
+    background-color: var(--bar-bg-color);
+
+    container-type: inline-size;
+
+    
+
+}
+
+a {
+    color: var(--link-color);
+}
+
+a[aria-current="page"]{
+    /* box-shadow: 0 0 1rem 0 var(--glow-color); */
+    /* border-width: 0.2rem; */
+    background-color: var(--hover-bg-color);
+    text-decoration: underline;
+    /* border-color: var(--nav-b-color); */
+    
+}
+
+
+
+main {
+    margin: 0 5% 0 5%;
+    padding-bottom: 1rem;
+    min-width: 0;
+}
+
+footer{
+    background-color: var(--bar-bg-color);
+    /* padding-left: var(--bar-pad-horiz); */
+    padding: 0 var(--bar-pad-horiz) 0 var(--bar-pad-horiz);
+    border-top: solid;
+    border-top-color: var(--bar-bd-color);
+    border-top-width: 1px;
+    line-height: var(--line-height-footer);
+
+    display: flex;
+    justify-content: space-between;        /* text left, button right */
+    align-items: center;                   /* vertically centers the button next to the text */
+    flex-wrap: wrap;                       /* on narrow screens the button drops below instead of squishing */
+    gap: 0.5rem;
+}
+
+footer-text {
+    display: block;
+}
+
+nav{  
+    font-size: 1.1rem; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; 
+    row-gap: 0.5rem;
+
+    column-gap: 1rem;
+    
+
+}
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: flex-start; */
+    /* row-gap: 1rem; */
+    /* gap: 0.5rem clamp(0.5rem, 3vw, 3rem); */
+
+    /* fallback for browsers without container units */
+    gap: 0.5rem 1rem;
+    /* row gap | column gap: starts at 3rem, squeezes to 0.5rem, then the links wrap */
+    gap: 0.5rem clamp(0.4rem, calc((100cqw - 55rem) / 5), 3rem);
+
+
+
+
+    /* align-items: center;  */
+    margin: 0;
+    padding: 0;
+    /* gap: 0.5rem clamp(0.2rem, 5cqw, 3rem);  */
+
+    /* flex: 1 1 12rem;   grow to fill space beside the logo; only wrap below if less than 12rem is left */
+    /* min-width: 0; */
+}
+
+/*  
+    Child Combinator: <li> elements that are direct children 
+    of the nav's <ul> removes bullets from the menu.
+*/
+nav > ul > li {
+    list-style: none;
+}
+nav img{
+    display: block;
+}
+
+/*  
+    Descendant Combinator: every <a> inside <nav>
+    styles the nav bar links as button like boxes.
+*/
+nav a{
+    /* display: block; */
+    display: inline-block; 
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--text-color);
+    font-weight: bold;
+    
+    padding: 0.4rem;
+
+    border: solid;
+    border-width: 0.1rem;
+    border-radius: 0.4rem;
+    border-color: var(--nav-bd-color);
+
+    background-color: var(--nav-item-bg-color);
+}
+
+nav a:hover{
+    border-color: var(--bar-bg-color);
+    /* box-shadow: 0 0 0.8rem 0.4rem var(--glow-color);  */
+    box-shadow: var(--glow-shadow);
+    background-color: var(--hover-bg-color);
+}
+
+
+    
+h1{
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    
+}
+
+h2 {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    
+}
+
+.demo-card{
+    border: solid;
+    border-color: var(--bar-bd-color);
+    border-radius: 0.5rem;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    
+}
+
+.demo-card svg {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+
+fieldset {
+    min-width: 0;          
+    box-sizing: border-box;
+    max-width: 25rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border: 0.1rem solid var(--bar-bd-color);
+    
+}
+
+legend{
+    font-weight: bold;
+}
+label{
+    font-weight: bold;
+}
+fieldset p{
+    line-height: 1.25rem;
+    font-size: 0.95rem;
+}
+
+form-field{
+
+    display: flex;
+    /* label on top, control below */
+    flex-direction: column;  
+
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+    /* max-width: 25rem; */
+    
+}
+
+form-field br{
+    display: none;
+}
+
+input,
+textarea {
+    box-sizing: border-box;
+    resize: vertical;
+    /* max-width: 100%;       */
+    /* border-color: black; */
+    /* border-width: 0.1rem; */
+    /* border-radius: 0.25rem; */
+    border: 0.1rem solid var(--control-bd-color);
+    border-radius: 0.4rem;   
+    background-color: var(--control-bg-color); 
+    color: var(--control-text-color);   
+}
+
+/* 
+    Attribute Selector: the <img> inside main whose alt contains 
+    "monkey" frames the photo with a border and rounded corners 
+*/
+main img[alt*="monkey"] {
+    border: 0.2rem solid var(--bar-bd-color);
+    border-radius: 0.5rem;
+}
+
+button{
+    font-size: inherit;
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 0.5em;
+    border: 0.1rem solid var(--nav-bd-color);           
+    background-color: var(--nav-item-bg-color);       
+    color: var(--text-color);                          
+    font-weight: bold;  
+    cursor: pointer;   
+}
+
+
+a:hover {
+    text-decoration: underline;
+    background-color: var(--hover-bg-color); 
+}
+
+
+
+
+input:focus, textarea:focus, button:focus-visible, a:focus-visible, random-dog-generator summary:focus-visible {
+    background-color: var(--focus-color);
+    color: var(--focus-text-color);                     
+    box-shadow: 0 0 0.8rem 0.4rem var(--focus-color);
+    outline: 0.25rem solid var(--bar-bd-color);
+    outline-offset: 0.1rem;
+}
+
+
+/* input:focus, button:focus, textarea:focus, a:focus{
+    background-color: var(--focus-color);
+    box-shadow: 0 0 0.8rem 0.4rem var(--focus-color);
+    outline: 0.25rem solid var(--bar-bd-color);
+    outline-offset: 0.1rem;
+} */
+
+/* valid, not focused: thin green */
+input:user-valid,
+textarea:user-valid {
+    outline: 0.125rem solid var(--valid-color);
+    outline-offset: 0.1rem;
+}
+
+/* invalid, not focused: thin red, dashed */
+input:user-invalid,
+textarea:user-invalid {
+    outline: 0.125rem dashed var(--error-color);
+    outline-offset: 0.1rem;
+}
+
+/* valid and focused: green, same thickness as the focus outline */
+input:focus:user-valid,
+textarea:focus:user-valid {
+    outline: 0.25rem solid var(--valid-color);     
+}
+
+/* invalid and focused: red, same thickness as the focus outline */
+input:focus:user-invalid,
+textarea:focus:user-invalid {
+    outline: 0.25rem dashed var(--error-color);
+}
+
+/* input:required, textarea:required {
+    border-color: rgb(40, 70, 60);
+} */
+
+
+
+#name-error-area,
+#email-error-area,
+#comments-error-area {
+    color: var(--error-color);
+}
+
+
+
+button:hover{
+    background-color: var(--hover-bg-color);
+    /* light: box-shadow: 0 0 0.8rem 0.4rem var(--glow-color); */
+    /* dark: box-shadow: 0 0 0.3rem 0.1rem var(--glow-color); */
+    box-shadow: var(--glow-shadow);
+}
+
+
+
+/* ========= dog css stuf would go here ========== */
+
+
+random-dog-generator{
+    display: block;
+    
+    width: 22rem;
+    
+    /* not sure if I will need the minimum*/
+    min-width: 30%;
+    max-width: 100%;
+
+
+    /* In the portfolio stylesheet, pass the site's color to the custom element. */
+    --rdg-header-footer-bg: var(--bar-bg-color, rgb(150, 150, 150));
+    --rdg-main-bg: color-mix(in srgb, var(--page-bg-color) 70%, var(--bar-bg-color));
+    --rdg-btn-bg: var(--nav-item-bg-color, white);
+    --rdg-error: var(--error-color);
+    --rdg-loading: var(--status-loading); 
+    --rdg-loaded: var(--status-loaded);
+   
+
+    
+}
+
+
+/* In the component's styles, read that value and supply a fallback. */
+/* .panel {
+  background-color: var(--panel-background, white);
+} */
+
+/* random-dog-generator > :not(footer){ */
+random-dog-generator > *{
+    /* 
+    these styles apply to the
+        header, 
+        main, 
+        and footer 
+    */
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* box-sizing: border-box; */
+
+    margin: 0;
+    
+    padding: 0 1rem 0 1rem;
+
+    *{
+        /* border: 1px solid blue; */
+    }
+   
+}
+
+
+random-dog-generator header{
+
+    column-gap: 0.5rem;
+    row-gap: 0.3rem;
+
+    border: 1px solid;
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.4rem;
+    /* border-color: rgb(0, 255, 0); */
+
+    background-color: var(--rdg-header-footer-bg, rgb(150, 150, 150));
+}
+
+random-dog-generator h3{
+    padding: 0;
+    margin: 0; 
+    line-height: normal;
+}
+random-dog-generator p{
+   
+    flex-basis: 100%;    
+    text-align: left;
+    margin: 0;
+    color: var(--rdg-loaded, green);
+    
+    height: 1lh;
+    font-size: 0.9rem;
+    /* font-weight: bold; */
+
+    /* display: inline; */
+}
+
+random-dog-generator button{
+    padding: 0.25rem;
+    margin: 0;
+    border-width: 2px;
+    border-color: var(--bar-bd-color); 
+    background-color: var(--rdg-btn-bg, white);
+}
+
+random-dog-generator main {
+    
+    column-gap: 1rem;
+    /* column-gap: clamp(5%, 1rem, 10%); */
+    
+    background-color: var(--rdg-main-bg, white);
+    /* background-color: color-mix(in srgb, var(--page-bg-color) 70%, var(--bar-bg-color)); */
+
+    border-right: 1px solid;
+    border-left: 1px solid;
+
+    padding-bottom: 1rem;
+    
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+random-dog-generator h4{
+    padding: 1rem 0 0.5rem 0;
+
+    margin: 0;
+    /* display: block; */
+    /* display: inline-block; */
+    display: inline;
+    height: 1lh;
+}
+
+
+random-dog-generator footer{
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    /* padding-bottom: 0.5rem; */
+    border: 1px solid;
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+
+    background-color: var(--rdg-header-footer-bg, white);
+}
+
+random-dog-generator details[open] + button{
+    /* stay level with the "Dog History" heading while the list is open */
+    align-self: flex-start;
+}
+
+
+random-dog-generator summary {
+  list-style: none;
+  position: relative;
+  /* padding-right: 2rem;   */
+  padding-right: 1.5rem;
+  /* padding-left: 0.5rem;    */
+  /* border-width: 1rem;  */
+  border-radius: 0.2rem;  
+}
+random-dog-generator summary::-webkit-details-marker { 
+    display: none; 
+} 
+
+random-dog-generator summary::after {
+  content: "+";
+  font-size: 2rem;
+  line-height: 1;
+  position: absolute;
+  right: 0; 
+  /* right: -0.1rem;             */
+  top: 50%;
+  transform: translateY(-50%);
+  
+}
+
+random-dog-generator [open] summary::after {
+  content: "−";
+}
+
+random-dog-generator summary:hover {
+    cursor: pointer;
+    /* box-shadow: 0 0 0.8rem 0.4rem var(--glow-color); */
+    background-color: var(--nav-item-bg-color);
+
+    box-shadow: 0 0 0 0.2rem var(--nav-item-bg-color),   /* bigger solid box */
+                0 0 0.2rem 0.3rem var(--glow-color);     /* glow outside it */
+
+    
+}
+
+
+
+
+
+random-dog-generator ul{
+    list-style: none;
+    
+    /* margin: 0.3rem 0 0.2rem 0; */
+    margin: 0;
+    padding: 0 0 0 0;
+}
+
+random-dog-generator ul button{
+    all: unset;
+    text-decoration: underline;
+
+    cursor: pointer;
+    color: var(--history-btn-txt-clr);
+    padding-left: 0.1rem;
+
+}
+
+
+random-dog-generator ul button:hover{
+    /* background-color: transparent; */
+    border-radius: 0.2rem;
+    padding: 0 0.1rem 0 0.1rem;
+    /* background-color: var(--hover-bg-color); */
+    /* box-shadow: 0 0 0.8rem 0.4rem var(--glow-color); */
+    /* box-shadow: none; */
+    box-shadow: 0 0 0.3rem 0.1rem var(--glow-color);
+
+    
+
+
+
+}
+
+random-dog-generator ul button:focus-visible{
+    outline: 2px solid var(--bar-bd-color);
+    outline-offset: 1px;
+    border-radius: 0.2rem;
+
+
+}
+
+li + li {
+  margin-top: 0.1rem;
+}
+
+
+
+random-dog-generator img{
+    /* display block got rid of the space under img */
+    display: block; 
+    
+    /* if dog img gets messed up the uncomment this */
+    /* width: 100%; */
+
+    /* ======== important: old one ========= */
+    /* width: auto;
+    height: auto;
+    max-width: 100%; 
+    max-height: 40vh; */
+
+    /* tried this one after the old one */
+    /* height: 15rem;
+    width: 100%;
+    object-fit: contain; */
+
+    /* current one */
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    max-height: 40vh;
+    object-fit: contain;
+
+}
+
+random-dog-generator p.loading{
+    color: var(--rdg-loading, yellow);
+    
+    font-style: italic;   
+}
+
+random-dog-generator p.error{
+    color: var(--rdg-error, red);
+    font-style: italic;
+}
+
+/* main-content img{ */
+    /* display block got rid of the space under img */
+    /* display: block;  */
+    /* if dog img gets messed up the uncomment this */
+    /* width: 50%; */
+    /* width: fit-content; */
+    /* max-width: 100%; */
+    /* height: auto; */
+    /* max-height: 50%; */
+    /* max-height: 35vh; */
+    /* height: 30vh; */
+
+
+/* } */
+
+
+.section-header {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    align-items: center;
+    column-gap: 0.5rem;
+    row-gap: 0.3rem;
+
+    margin-top: 1.245rem;
+    margin-bottom: 1.245rem;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.section-header h2 {
+    padding: 0;
+    margin: 0;
+    line-height: normal;
+}
+
+#dog-section button{
+    padding: 0.2rem;
+}
+
+
+
+
+
+@media (max-width: 600px) {
+    nav{
+        flex-wrap: wrap;
+        /* row-gap: 0.2rem;   */
+        gap: 0.2rem;
+    }
+    nav ul {
+        flex-wrap: wrap;   
+        gap: 0.2rem;
+        /* row-gap: 0.2rem;    */
+        /* gap: 0.5rem; */
+        
+    }
+
+    /* nav a {
+        display: inline-block;
+        white-space: nowrap; 
+    } */
+
+    body > header {
+        padding: var(--bar-pad); 
+        /* padding-left: 5%; */
+    }
+
+}
+
+
+/* 
+@view-transition {
+  navigation: auto;
+} */
+
+/* ::view-transition-group(root) {
+  animation-duration: 0.5s;
+} */

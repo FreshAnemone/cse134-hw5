@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="assets/favicon.ico"/>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="theme.js"></script>
+        <script src="dog-part2.js"defer></script>
+        <!-- <link rel="stylesheet" href="dog.css"/> -->
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home | Noah's Website</title>
+        
+    </head>
+    <body>
+        
+        <header>
+            <nav>
+                <a href="index.html" aria-current="page">
+                    <img src="assets/nt.png" alt="Home" width="48" height="48">
+                </a>
+                <ul>
+                    <li><a href="web-component-part1.html">Web Component Part 1</a></li>
+                    <li><a href="form-with-js.html">Form With JS</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="demos.html">Demos</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <noscript>
+                <p>This site's content and navigation work without JavaScript. </p>
+            </noscript>
+
+            <h1>Hi, I'm Noah Terrell and Welcome to my Site</h1>
+            
+            <p>I'm a 4th year Computer Science Major at UCSD who is interested in systems and web development. I grew up in San Diego California and I really enjoy the outdoors.</p>
+
+            
+
+            <picture>
+                <source srcset="assets/monkey.webp" type="image/webp">
+                <img src="assets/monkey.jpg" alt="Picture of monkey" width="200" height="250"/>
+            </picture>
+
+            
+
+            <section id="dog-section">
+                <div class="section-header">
+                    <h2>Random Dog Generator (Part 2 With API)</h2>
+                    <button hidden>Collapse</button>
+                </div>
+                <random-dog-generator></random-dog-generator>
+                <noscript><p>Enable JavaScript to load live data for this widget.</p></noscript>
+            </section>
+            
+            
+        
+            
+            
+        </main>
+        <footer>
+
+            <footer-text>
+                <p>Website made by Noah Terrell</p>
+                <p>nterrell@ucsd.edu</p>
+            </footer-text>
+            
+            <button type="button" id="theme-toggle" hidden>Dark theme</button>
+            <!-- <button type="button" id="theme-toggle" hidden aria-pressed="false">Dark theme</button> -->
+
+
+
+        </footer>
+    </body>
+</html>

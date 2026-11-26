@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="assets/favicon.ico"/>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="form.js" defer></script>
+        <script src="theme.js"></script>
+        <meta charset="UTF-8">
+        
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Form With JS | Noah's Website</title>
+        
+
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="index.html">
+                    <img src="assets/nt.png" alt="Home" width="48" height="48">
+                </a>
+                <ul>
+                    <li><a href="web-component-part1.html">Web Component Part 1</a></li>
+                    <li><a href="form-with-js.html" aria-current="page">Form With JS</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="demos.html">Demos</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+
+            <h1>Contact Form With JS</h1>
+
+            <study-note></study-note>
+
+            <script>
+            class StudyNote extends HTMLElement {
+                connectedCallback() {
+                this.textContent = "Remember to test with the keyboard.";
+                }
+            }
+
+            customElements.define("study-note", StudyNote);
+            </script>
+            <button type="button" id="show-message">Show message</button>
+            <div id="messages"><p hidden="true"></p></div>
+
+            <script>
+            const button = document.querySelector("#show-message");
+            const messages = document.querySelector("#messages");
+
+            button.addEventListener("click", () => {
+                const message = document.createElement("p");
+                message.textContent = "You activated the button.";
+                messages.appendChild(message);
+            });
+            </script>
+            
+                
+            <form action="https://httpbin.org/post" method="post">
+                <fieldset>
+                    <legend>Send me a Message</legend>
+
+                    <p>All fields are required.</p>
+                    <p>Names can be up to 100 characters, and
+                    comments must be (10 - 1,000) characters.</p>
+                    <p>A solid green outline means the input is valid. A red dashed outline means it needs fixing.</p>
+
+                    <form-field>
+                        <label for="name">Name (Required)</label><br>
+                        <input id="name" type="text" name="name" autocomplete="name" minlength="1" maxlength="100" required aria-describedby="name-error-area">
+                        <div id="name-error-area" aria-live="polite"></div>
+                        <br>
+                    </form-field>
+
+                    <form-field>
+                        <label for="email">Email (Required)</label><br>
+                        <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error-area">
+                        <div id="email-error-area" aria-live="polite"></div>
+                        <br>
+                    </form-field>
+
+                    <form-field>
+                        <label for="comments">Comments (Required)</label><br>
+                        <textarea id="comments" name="comments" rows="5" minlength="10" maxlength="1000" required aria-describedby="char-count-area comments-error-area"></textarea>
+                        <div id="char-count-area" hidden></div>
+                        <div id="comments-error-area" aria-live="polite"></div>
+                        <br>
+                    </form-field>
+
+                    <input type="hidden" name="possible_bot" value="true"/>
+                    
+                    <button type="submit">Send</button>
+
+                    <input type="hidden" name="form-errors" id="form-errors">
+
+                </fieldset>
+            </form>
+           
+
+ 
+        </main>
+        <footer>
+            <footer-text>
+                <p>Website made by Noah Terrell</p>
+                <p>nterrell@ucsd.edu</p>
+            </footer-text>
+            
+
+            <button type="button" id="theme-toggle" hidden aria-pressed="false">Dark theme</button>
+
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+---
+permalink: about.html
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="assets/favicon.ico"/>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="theme.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Me | Noah's Website</title>
+    </head>
+     <body>
+        <header>
+            <nav>
+                <a href="index.html">
+                    <img src="assets/nt.png" alt="Home" width="48" height="48">
+                </a>
+                <ul> 
+                    <li><a href="about.html" aria-current="page">About Me</a></li>
+                    
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Learn all about me</h1>
+
+
+
+            <section>
+                <h2>Favorite Videogames</h2>
+                <ol>
+                    <li>Red Dead Redemption 2</li>
+                    <li>Minecraft</li>
+                    <li>Call of Duty</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Education</h2>
+                <p>4th year Computer Science student at UCSD</p>
+
+
+                <p>Favorite classes:</p>
+                <ol>
+                    <li>CSE 135</li>
+                    <li>CSE 160</li>
+                    <li>CSE 123</li>
+                </ol>
+
+                <p>This quarter I'm learning about <i>Operating Systems</i> in my coursework.</p>
+            </section>
+
+            <h2>Pets</h2>
+
+            <section>
+                <h2>Skills</h2>
+                <p>
+                    <label for="python-skill">Python</label>
+                    <progress id="python-skill" value="80" max="100">80%</progress>
+                </p>
+                <p>
+                    <label for="web-skill">Web Development</label>
+                    <progress id="web-skill" value="70" max="100">70%</progress>
+                </p>
+            </section>
+
+            
+
+
+
+        </main>
+        
+        {% include "footer.njk" %}
+
+        
+    </body>
+</html>

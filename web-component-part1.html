@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="assets/favicon.ico"/>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="theme.js"></script>
+        <script src="dog-part1.js"defer></script>
+        <!-- <link rel="stylesheet" href="dog.css"/> -->
+        <meta charset="UTF-8">
+        
+
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>web component part1 | Noah's Website</title>
+        
+
+    </head>
+    <body>
+        
+        <header>
+            <hello-world></hello-world>
+            <nav>
+                <a href="index.html">
+                    <img src="assets/nt.png" alt="Home" width="48" height="48">
+                </a>
+                <ul>
+                    <li><a href="web-component-part1.html" aria-current="page">Web Component Part 1</a></li>
+                    <li><a href="form-with-js.html">Form With JS</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="demos.html">Demos</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <noscript>
+                <p>This site's content and navigation work without JavaScript. The "hello-world" element only logs a message to the browser console, which requires JavaScript.</p>
+            </noscript>
+
+
+            <section id="dog-section">
+                <div class="section-header">
+                    <h2>Random Dog Generator Part 1</h2>
+                    <button>Collapse</button>
+                </div>
+                <random-dog-generator></random-dog-generator>
+            </section>
+ 
+            
+     
+            
+        </main>
+        <footer>
+
+            <footer-text>
+                <p>Website made by Noah Terrell</p>
+                <p>nterrell@ucsd.edu</p>
+            </footer-text>
+            
+            <button type="button" id="theme-toggle" hidden aria-pressed="false">Dark theme</button>
+
+
+        </footer>
+    </body>
+</html>
